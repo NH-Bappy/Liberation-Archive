@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+
+.livaration {
+  background-image: url("../image/unnamed.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #0000004b;
+}

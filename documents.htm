@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangladesh Liberation War Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Liberation Archive</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/index.html" class="hover:text-gray-200">Home</a>
+                <a href="/documents.htm" class="hover:text-gray-200">Documents</a>
+
+                <a href="/Interviews.html" class="hover:text-gray-200">Interviews</a>
+                <a href="/Gallery.html" class="hover:text-gray-200">Gallery</a>
+                <a href="/Contact.html" class="hover:text-gray-200">Contact</a>
+            </nav>
+            <button class="md:hidden p-2 focus:outline-none" id="menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-green-800">
+            <a href="/index.html" class="block px-4 py-2">Documents</a>
+            <a href="/documents.htm" class="block px-4 py-2">Documents</a>
+            <a href="/Interviews.html" class="block px-4 py-2">Interviews</a>
+            <a href="/Gallery.html" class="block px-4 py-2">Gallery</a>
+            <a href="/Contact.html" class="block px-4 py-2">Contact</a>
+        </div>
+    </header>
+    <!-- Documents -->
+    <section id="documents" class="max-w-6xl mx-auto py-16 px-4">
+        <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10">
+            Historic Documents
+        </h3>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button class="doc-filter bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 active"
+                data-category="all">All</button>
+            <button class="doc-filter bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-green-600 hover:text-white"
+                data-category="treaties">Treaties</button>
+            <button class="doc-filter bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-green-600 hover:text-white"
+                data-category="declarations">Declarations</button>
+            <button class="doc-filter bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-green-600 hover:text-white"
+                data-category="correspondence">Official Correspondence</button>
+        </div>
+
+        <!-- Documents Grid -->
+        <div id="documentsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-20">
+            <!-- Card 1 -->
+            <div class="doc-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                data-category="declarations"
+                onclick="openDocModal('Declaration of Independence', 'The document declaring the independence of Bangladesh, officially marking the start of the Liberation War in 1971.', 'March 26, 1971', 'Provisional Government of Bangladesh')">
+                <h4 class="font-semibold text-lg mb-2">Declaration of Independence</h4>
+                <p class="text-gray-600 mb-2">The document declaring the independence of Bangladesh.</p>
+                <p class="text-sm text-gray-500">Date: March 26, 1971</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="doc-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                data-category="treaties"
+                onclick="openDocModal('Instrument of Surrender', 'The formal document marking the surrender of the Pakistani Army in 1971, leading to the official end of the Liberation War.', 'December 16, 1971', 'Pakistani Eastern Command & Indian-Bangladesh Joint Command')">
+                <h4 class="font-semibold text-lg mb-2">Instrument of Surrender</h4>
+                <p class="text-gray-600 mb-2">The formal document marking the surrender of the Pakistani Army in 1971.
+                </p>
+                <p class="text-sm text-gray-500">Date: December 16, 1971</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="doc-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                data-category="correspondence"
+                onclick="openDocModal('Constitution Draft', 'Draft version of the Constitution for the newly formed Bangladesh government, establishing the foundation of its democracy.', 'November 4, 1972', 'Constitution Drafting Committee')">
+                <h4 class="font-semibold text-lg mb-2">Constitution Draft</h4>
+                <p class="text-gray-600 mb-2">Draft of the Constitution for the newly formed Bangladesh government.</p>
+                <p class="text-sm text-gray-500">Date: November 4, 1972</p>
+            </div>
+        </div>
+
+                <div id="documentsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="doc-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                data-category="declarations"
+                onclick="openDocModal('Declaration of Independence', 'The document declaring the independence of Bangladesh, officially marking the start of the Liberation War in 1971.', 'March 26, 1971', 'Provisional Government of Bangladesh')">
+                <h4 class="font-semibold text-lg mb-2">Declaration of Independence</h4>
+                <p class="text-gray-600 mb-2">The document declaring the independence of Bangladesh.</p>
+                <p class="text-sm text-gray-500">Date: March 26, 1971</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="doc-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                data-category="treaties"
+                onclick="openDocModal('Instrument of Surrender', 'The formal document marking the surrender of the Pakistani Army in 1971, leading to the official end of the Liberation War.', 'December 16, 1971', 'Pakistani Eastern Command & Indian-Bangladesh Joint Command')">
+                <h4 class="font-semibold text-lg mb-2">Instrument of Surrender</h4>
+                <p class="text-gray-600 mb-2">The formal document marking the surrender of the Pakistani Army in 1971.
+                </p>
+                <p class="text-sm text-gray-500">Date: December 16, 1971</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="doc-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                data-category="correspondence"
+                onclick="openDocModal('Constitution Draft', 'Draft version of the Constitution for the newly formed Bangladesh government, establishing the foundation of its democracy.', 'November 4, 1972', 'Constitution Drafting Committee')">
+                <h4 class="font-semibold text-lg mb-2">Constitution Draft</h4>
+                <p class="text-gray-600 mb-2">Draft of the Constitution for the newly formed Bangladesh government.</p>
+                <p class="text-sm text-gray-500">Date: November 4, 1972</p>
+            </div>
+        </div>
+
+        <!-- Document Modal -->
+        <div id="docModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg max-w-lg w-full mx-4 p-6 relative shadow-lg">
+                <button onclick="closeDocModal()"
+                    class="absolute top-4 right-4 text-gray-600 hover:text-red-600 text-xl">✕</button>
+                <h4 id="docTitle" class="text-xl font-semibold mb-2"></h4>
+                <p id="docDescription" class="text-gray-700 mb-3"></p>
+                <p class="text-sm text-gray-600"><strong>Date:</strong> <span id="docDate"></span></p>
+                <p class="text-sm text-gray-600 mb-4"><strong>Source:</strong> <span id="docSource"></span></p>
+                <a href="#" id="docDownload"
+                    class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 inline-block">Download
+                    Document</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8">
+        </div>
+        <p class="text-center text-gray-400 text-sm mt-6">
+            © 2025 Liberation War Archive of Bangladesh. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- JavaScript for Filtering & Modal -->
+    <script>
+        // Filter functionality
+        const docButtons = document.querySelectorAll('.doc-filter');
+        const docCards = document.querySelectorAll('.doc-card');
+
+        docButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset button styles
+                docButtons.forEach(b => b.classList.remove('bg-green-600', 'text-white'));
+                btn.classList.add('bg-green-600', 'text-white');
+
+                const category = btn.getAttribute('data-category');
+                docCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        function openDocModal(title, description, date, source) {
+            document.getElementById('docModal').classList.remove('hidden');
+            document.getElementById('docTitle').textContent = title;
+            document.getElementById('docDescription').textContent = description;
+            document.getElementById('docDate').textContent = date;
+            document.getElementById('docSource').textContent = source;
+            document.getElementById('docDownload').href = "#"; // Add your actual file URL
+        }
+
+        function closeDocModal() {
+            document.getElementById('docModal').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

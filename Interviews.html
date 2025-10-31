@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangladesh Liberation War Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Liberation Archive</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/index.html" class="hover:text-gray-200">Home</a>
+                <a href="/documents.htm" class="hover:text-gray-200">Documents</a>
+
+                <a href="/Interviews.html" class="hover:text-gray-200">Interviews</a>
+                <a href="/Gallery.html" class="hover:text-gray-200">Gallery</a>
+                <a href="/Contact.html" class="hover:text-gray-200">Contact</a>
+            </nav>
+            <button class="md:hidden p-2 focus:outline-none" id="menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-green-800">
+            <a href="/index.html" class="block px-4 py-2">Documents</a>
+            <a href="/documents.htm" class="block px-4 py-2">Documents</a>
+            <a href="/Interviews.html" class="block px-4 py-2">Interviews</a>
+            <a href="/Gallery.html" class="block px-4 py-2">Gallery</a>
+            <a href="/Contact.html" class="block px-4 py-2">Contact</a>
+        </div>
+    </header>
+    <!-- Interviews -->
+    <section id="interviews" class="bg-gray-100 py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10">
+                Interviews with Freedom Fighters
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/y2g8J0CbJeQ?si=_ebOs__nVoxiExkm"
+                            title="Col. (Retd.) Abu Osman Chowdhury" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full">
+                        </iframe>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-semibold text-gray-800">
+                            Col. (Retd.) Abu Osman Chowdhury
+                        </h4>
+                        <p class="text-gray-600 mb-2">Sector Commander, Sector 8</p>
+                        <a href="https://youtu.be/y2g8J0CbJeQ?si=GkTci9Yj7kRv8wjH"
+                            class="text-green-700 font-medium hover:underline">
+                            Listen →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/JuNGnJrIoZg" title="Dr. Sayeed Haider"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full">
+                        </iframe>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-semibold text-gray-800">Dr. Sayeed Haider</h4>
+                        <p class="text-gray-600 mb-2">Physician in Refugee & Medical Workers</p>
+                        <a href="https://youtu.be/JuNGnJrIoZg" class="text-green-700 font-medium hover:underline">
+                            Listen →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/1HqX5koH3Zc" title="Mrs. Ayesha F. Hussain"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full">
+                        </iframe>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-semibold text-gray-800">Mrs. Ayesha F. Hussain</h4>
+                        <p class="text-gray-600 mb-2">Civilian Worker in Refugee Camps</p>
+                        <a href="https://youtu.be/1HqX5koH3Zc" class="text-green-700 font-medium hover:underline">
+                            Listen →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/MoG3zWQ-e6c" title="Mr. Kamal Hossain"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full">
+                        </iframe>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-semibold text-gray-800">Mr. Kamal Hossain</h4>
+                        <p class="text-gray-600 mb-2">Member of Constitution Drafting Committee</p>
+                        <a href="https://youtu.be/MoG3zWQ-e6c" class="text-green-700 font-medium hover:underline">
+                            Listen →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8">
+        </div>
+        <p class="text-center text-gray-400 text-sm mt-6">
+            © 2025 Liberation War Archive of Bangladesh. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>

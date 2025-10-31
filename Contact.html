@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangladesh Liberation War Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Liberation Archive</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/index.html" class="hover:text-gray-200">Home</a>
+                <a href="/documents.htm" class="hover:text-gray-200">Documents</a>
+
+                <a href="/Interviews.html" class="hover:text-gray-200">Interviews</a>
+                <a href="/Gallery.html" class="hover:text-gray-200">Gallery</a>
+                <a href="/Contact.html" class="hover:text-gray-200">Contact</a>
+            </nav>
+            <button class="md:hidden p-2 focus:outline-none" id="menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-green-800">
+            <a href="/index.html" class="block px-4 py-2">Documents</a>
+            <a href="/documents.htm" class="block px-4 py-2">Documents</a>
+            <a href="/Interviews.html" class="block px-4 py-2">Interviews</a>
+            <a href="/Gallery.html" class="block px-4 py-2">Gallery</a>
+            <a href="/Contact.html" class="block px-4 py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-gray-100 py-16 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="text-2xl font-semibold mb-6">Contact & Contributions</h3>
+            <p class="text-gray-600 mb-8">
+                We welcome contributions to our archive. If you have documents, photographs, or personal stories related
+                to the Liberation War, please contact us.
+            </p>
+
+            <!-- Success Message-->
+            <div id="successMessage"
+                class="hidden mb-4 text-green-700 bg-green-100 border border-green-300 px-4 py-3 rounded">
+                Your message has been sent successfully!
+            </div>
+
+            <form id="contactForm" class="bg-white p-8 rounded-lg shadow space-y-4">
+                <input type="text" placeholder="Full Name" required
+                    class="w-full border border-gray-300 rounded px-4 py-2">
+                <input type="email" placeholder="Email Address" required
+                    class="w-full border border-gray-300 rounded px-4 py-2">
+                <input type="text" placeholder="Subject" required
+                    class="w-full border border-gray-300 rounded px-4 py-2">
+                <textarea placeholder="Your Message" required
+                    class="w-full border border-gray-300 rounded px-4 py-2 h-32"></textarea>
+                <input type="file" class="w-full border border-gray-300 rounded px-4 py-2">
+                <button type="submit" class="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800">Send
+                    Message</button>
+            </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-green-800 text-white py-8">
+    <p class="text-center text-gray-400 text-sm mt-6">
+        © 2025 Liberation War Archive of Bangladesh. All rights reserved.
+    </p>
+</footer>
+
+
+    <!-- Mobile menu toggle script -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        }
+
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            successMessage.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+
+</body>
+
+</html>
