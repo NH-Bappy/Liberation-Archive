@@ -43,25 +43,56 @@
 
     <!-- banner Section -->
 
+<!-- Banner Section -->
 
-    <section class="livaration py-16 px-4 text-center">
-        <div class="w-[700px] h-[250px] rounded bg-[#000000b2]">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white drop-shadow-lg">
-                Bangladesh Liberation War Archive
-            </h2>
-            <p class="max-w-3xl mx-auto text-white font-semibold mb-8 drop-shadow-md">
-                hand. Streetlights cast long shadows. A cat prowled along a fence. The fountain continued to whisper. A
-                car drove by slowly. The sound of footsteps echoed. The world seemed peaceful again. A lone owl hooted
-                softly. Windows closed for the night. The air grew still and quiet. Dreams began to fill
-            </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#documents" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Explore
-                    Documents</a>
-                <a href="#gallery" class="bg-gray-100 border border-gray-300 px-6 py-2 rounded hover:bg-gray-200">View
-                    Gallery</a>
+
+
+<!-- Banner Section -->
+<section class="relative w-full h-[80vh] overflow-hidden">
+    <div class="carousel flex transition-transform duration-700 ease-in-out" id="carousel">
+        <!-- Slide 1 -->
+        <div class="w-full flex-shrink-0 h-[80vh] relative">
+            <img src="/image/download (1).jfif" alt="Liberation War Image 1" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">Bangladesh Liberation War 1971</h2>
+                <p class="text-lg md:text-xl max-w-2xl">A journey of courage, sacrifice, and freedom.</p>
             </div>
         </div>
-    </section>
+
+        <!-- Slide 2 -->
+        <div class="w-full flex-shrink-0 h-[80vh] relative">
+            <img src="/image/download (2).jfif" alt="Liberation War Image 2" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">Voices of the Brave</h2>
+                <p class="text-lg md:text-xl max-w-2xl">Hear the untold stories of our freedom fighters.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="w-full flex-shrink-0 h-[80vh] relative">
+            <img src="/image/download (3).jfif" alt="Liberation War Image 3" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">Preserving History</h2>
+                <p class="text-lg md:text-xl max-w-2xl">An archive of documents, interviews, and memories.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prev"
+        class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-green-700 bg-opacity-70 text-white p-3 rounded-full hover:bg-opacity-100">
+        &#10094;
+    </button>
+    <button id="next"
+        class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-green-700 bg-opacity-70 text-white p-3 rounded-full hover:bg-opacity-100">
+        &#10095;
+    </button>
+</section>
+
+
 
     <!-- Overview -->
     <section class="max-w-6xl mx-auto py-12 px-4">
@@ -282,6 +313,22 @@
         if (btn && menu) {
             btn.addEventListener('click', () => menu.classList.toggle('hidden'));
         }
+
+        // slider
+          const carousel = document.getElementById("carousel");
+            const slides = carousel.children;
+            let index = 0;
+
+            function showSlide(i) {
+                index = (i + slides.length) % slides.length;
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            document.getElementById("next").addEventListener("click", () => showSlide(index + 1));
+            document.getElementById("prev").addEventListener("click", () => showSlide(index - 1));
+
+            // Auto Slide every 5 seconds
+            setInterval(() => showSlide(index + 1), 5000);
 
         const form = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
